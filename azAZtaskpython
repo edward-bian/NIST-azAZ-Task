@@ -1,0 +1,27 @@
+userinput = input("Please input a file name (you don't need the .tex at the end) to process: ")
+littlealphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+bigalphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+with open (userinput+".tex", "r") as userfile:
+    with open(userinput+"_processed.tex", 'a') as newfile:
+        for line in userfile:
+            for i in range(0,len(line)):
+                if line[i] in littlealphabet:
+                    for j in range(0,len(littlealphabet)):
+                        if line[i] == littlealphabet[j]:
+                            word = str(bigalphabet[j])
+                            newfile.write(word)
+                            print(bigalphabet[j], end="")
+                            #characters being added to file printed for user convenience
+                elif line[i] in bigalphabet:
+                    for k in range(0,len(bigalphabet)):
+                        if line[i] == bigalphabet[k]:
+                            word = str(littlealphabet[k])
+                            newfile.write(word)
+                            print(littlealphabet[k], end="")
+                            #characters being added to file printed for user convenience
+                else:
+                    word = str(line[i])
+                    newfile.write(word)
+                    print(line[i], end="")
+                    #characters being added to file printed for user convenience
+        print()
