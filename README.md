@@ -1,34 +1,42 @@
 # NIST-azAZ-Task
 # SYNOPSIS
-This program will go through a .tex file and convert all lower case "m"s to upper case and vice versa.
+This program will go through a .tex file and convert all lower case letters to upper case and vice versa.
 
 # CODE EXAMPLE
-This program works by looking at individual characters in each line, checking if the character is an m and changing it accordingly
+This program works by looking at individual characters in each line, checking the case of each character and changing it accordingly
 
 for line in userfile:
 
             for i in range(0,len(line)):
             
-                if line[i] == "M":
+                if line[i] in littlealphabet:
                 
-                    word = str("m")
+                    for j in range(0,len(littlealphabet)):
                     
-                    newfile.write(word)
-                    
-                    print("m", end="")
-                    
-                    #characters being added to file printed for user convenience
-                    
-                elif line[i] == "m":
+                        if line[i] == littlealphabet[j]:
+                        
+                            word = str(bigalphabet[j])
+                            
+                            newfile.write(word)
+                            
+                            print(bigalphabet[j], end="")
+                            
+                            #characters being added to file printed for user convenience
+                            
+                elif line[i] in bigalphabet:
                 
-                    word = str("M")
+                    for k in range(0,len(bigalphabet)):
                     
-                    newfile.write(word)
-                    
-                    print("M", end="")
-                    
-                    #characters being added to file printed for user convenience
-                    
+                        if line[i] == bigalphabet[k]:
+                        
+                            word = str(littlealphabet[k])
+                            
+                            newfile.write(word)
+                            
+                            print(littlealphabet[k], end="")
+                            
+                            #characters being added to file printed for user convenience
+                            
                 else:
                 
                     word = str(line[i])
@@ -39,6 +47,7 @@ for line in userfile:
                     
                     #characters being added to file printed for user convenience
                     
+
 #MOTIVATION
 This program was created to sort through a .tex document and process its content as according to the synopsis as part of the application process to NIST
 
@@ -56,9 +65,9 @@ Sample input file name: moon
 
 Output file:
 
-There is a full Moon
+tHERE IS A FULL MOON
 
-Output file name: moonprocessed2.tex
+Output file name: moon_processed.tex
 
 
   
