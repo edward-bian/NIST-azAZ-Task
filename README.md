@@ -49,7 +49,7 @@ for line in userfile:
                     
 
 #MOTIVATION
-This program was created to sort through a .tex document and process its content as according to the synopsis as part of the application process to NIST
+This program was created to sort through a .tex document and process its content as according to the synopsis as part of the application process to the NIST DRMF intership for 2015
 
 #INSTALLATION
 To run this program, copy the code from Github and paste it into Python 3.4.3, then paste save the python file to the save location as the file that is to be processed.
@@ -69,5 +69,8 @@ tHERE IS A FULL MOON
 
 Output file name: moon_processed.tex
 
+#CONTRIBUTORS
+Mr. Howard Cohl for overseeing this project
+Mr. Mark Curran for giving me the opportunity to join NIST
 
   
